@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Nunito&family=Shantell+Sans&family=Source+Sans+Pro&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+   }
+
+/* para a resolução de 820px*/
+
+
+.botao {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.cabecalho{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+    padding-bottom: 15px;
+}
+.titulo-principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Shantell Sans', cursive;
+    font-size: 60px;
+    color: aliceblue;
+}
+.subtitulo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 21px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: aliceblue;
+}
+
+.imagem-carrinho{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.conteúdo-principal{
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    padding-bottom: 50px;
+}
+
+.passo{
+    font-family: 'Shantell Sans', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 17px;
+    
+}
+.desc-passo{
+    font-family: 'Nunito', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 16px;
+}
+.desc-passo2{
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.desc-passo3{
+    padding: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.imgs{
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+.imagem-tutorial1{
+    width: 6%;
+}
+.imagem-tutorial{
+    width: 10%;
+}
+
+.formulario{
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo-form{
+    font-family: 'Shantell Sans', cursive;
+    padding-bottom: 10px;
+}
+
+.etapasform{
+    font-family: 'Nunito', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+.input-proposta{
+    outline: none;
+    border-radius: 14px;
+    border-color: black;
+    font-size: 12px;
+    width: 250px;
+    height: 180px;
+    padding: 10px;
+    line-height: 2em;
+}
+
+.input{
+    outline: none;
+    border-radius: 14px;
+    border-color: black;
+    font-size: 12px;
+    width: 250px;
+    padding: 10px;
+
+}
+
+.container-form{
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.final-página{
+    padding-top: 20px;
+    background-color: red;
+}
+
+.botao {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+    width: 180px;
+    background-color: rgb(228, 228, 228);
+    color: #000;
+    font-size: 18px;
+    z-index: 1;
+  }
+  
+  .botao:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+  
+  .botao:hover {
+    color: #fff;
+  }
+  
+  .botao:hover:before {
+    transform: translateX(0);
+  }
+
+  .botoes2{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    
+  }
+
+.contatobtn{
+    background-color: #ffffff;
+    align-items: center;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+
+
+
+
+.popup {
+    font-family: 'Nunito', sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+
+
+
+
+   @media only screen and (max-width: 280px){
+    .formulario{
+        background: white;
+        border-radius: 10px;
+        padding: 4px;
+        display:flex ;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

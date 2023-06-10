@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kibon - Picolé na sua Festa Fortaleza!</title>
+    <link rel="stylesheet" href="src/styles/styles.css">
+    <link rel="icon" href="src/imgs/icon-kibon.png">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <h1 class="titulo-principal">KIBON NA SUA FESTA</h1>
+        <div class="subtitulo">QUE TAL UM CARRINHO REPLETO DE KIBON NA SUA FESTA?</div>
+    </header>
+    <main>
+        <div class="imagem1">
+            <img class="imagem-carrinho" src="src/imgs/logo-kibonnasuafesta.webp" alt="Logo-KibonNaSuaFesta"/>
+        </div>
+        <div class="conteúdo-principal">
+            <p><strong> Kibon te acompanha há mais de 70 anos nas praias, padarias e mercados, e agora pode estar também na sua festa!</strong></p>
+            <p><strong>É bem simples: escolha qual o tipo de evento você gostaria de fazer, o número de pessoas e seus sorvetes preferidos e pronto! A felicidade já está garantida para deixar sua festa ainda mais animada.</strong></p>
+            <p><strong>Nosso operador credenciado entrará em contato com você para ajustar os detalhes e no dia combinado levará os sorvetes e o carrinho para animar seu evento. Vamos juntos compartilhar a felicidade Kibon com seus convidados!</strong></p>
+        </div>
+        <div class="area-tutorial">
+            <div class="imgs">
+            <img class="imagem-tutorial1" src="src/imgs/picole.webp" alt="picole">
+            </div>
+            <div class="tutorial">
+                <h2 class="passo">01. PREENCHA O FORMULÁRIO</h2>
+                <div class="desc-passo">Envie para a gente as informações da sua festa.</div>
+            </div>
+            <div class="imgs">
+                <img class="imagem-tutorial" src="src/imgs/relogio.webp" alt="relogio">
+            </div>
+            <div class="tutorial">
+                <h2 class="passo">02. Aguarde o nosso contato</h2>
+                <div class="desc-passo2">Nós entraremos em contato com você em até 10 dias que antecede o evento.</div>
+            </div>
+            <div class="imgs">
+                <img class="imagem-tutorial" src="src/imgs/balao.webp" alt="balao">
+            </div>
+            <div class="tutorial">
+                <h2 class="passo">03. Receba Kibon na sua festa!</h2>
+                <div class="desc-passo3">Agora é só aguardar o tão sonhado dia da festa e se deliciar compartilhando felicidade com seus convidados!</div>
+            </div>
+        </div>
+
+        <div id="popup" class="popup hidden">
+            <div class="popup-content">
+              <h3>Formulário enviado com sucesso!</h3>
+              <p>Obrigado por entrar em contato.</p>
+            </div>
+          </div>
+
+
+
+    </main>
+    <footer class="final-página">
+        <div class="area-form">
+            <div class="container-form">
+                <form class="formulario" onsubmit="enviarEmail(); return false;">
+                    <h2 class="titulo-form">Monte sua festa</h2>
+                    <div class="etapasform"> Insira seu nome completo</div>
+                    <input class="input" id="nome" type="text" name="Nome Completo" placeholder="Nome Completo" required>
+                    <div class="etapasform">Insira seu melhor Email para contato</div>
+                    <input class="input" id="email" type="email" name="Email" placeholder="Email" required>
+                    <div class="etapasform">Monte a sua festa</div>
+                    <textarea class="input-proposta" id="proposta" type="text" name="descricao-festa" placeholder="Conte-nos como deseja a sua festa com a Kibon" required></textarea>
+                
+                    <div class="parte-botao">
+                    <button class="botao" type="submit">ENVIAR</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="botoes2">
+            <button onclick="window.open('https://api.whatsapp.com/send?phone=5585999224767&text=Quero%20solicitar%20meu%20Orçamento.%20Seguem%20abaixo%20as%20informações%20da%20minha%20Festa:', '_blank')" class="contatobtn"><img src="src/imgs/icons8-whatsapp-48.png" alt="whatsapp"></button>
+            <button class="contatobtn"><img src="src/imgs/icons8-instagram-48.png" onclick="window.open('https://www.instagram.com/picolenasuafestafortaleza/', '_blank')" alt="instagram"><a href="https://www.instagram.com/picolenasuafestafortaleza/"></button></a>
+        </div>
+    </footer>
+
+    <script>
+        
+        function enviarEmail() {
+            
+            // Configurar os parâmetros para o envio do e-mail
+            const serviceID = 'service_3r24xot';
+            const templateID = 'template_0mo2w17';
+            const userID = 'oOIoWO_izB-32PUBk';
+    
+            // Coletar os dados do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const proposta = document.getElementById('proposta').value;
+    
+            // Configurar os parâmetros do e-mail
+            const parametros = {
+                to_name: nome,
+                to_email: email,
+                subject: 'ASSUNTO DO E-MAIL:',
+                message: `${proposta}`
+            };
+    
+            // Enviar o e-mail usando EmailJS
+            emailjs.send(serviceID, templateID, parametros, userID)
+                .then(function(response) {
+                    console.log('E-mail enviado com sucesso!', response.status, response.text);
+                    exibirPopupSucesso();
+                    // Realizar ações adicionais após o envio do e-mail, se necessário
+                }, function(error) {
+                    console.error('Erro ao enviar o e-mail:', error);
+                    // Tratar o erro, se necessário
+                });
+        }
+
+        function exibirPopupSucesso() {
+            const popup = document.getElementById('popup');
+            popup.classList.remove('hidden');
+        }
+
+
+        window.onclick = function(event) {
+    const popup = document.getElementById('popup');
+    if (event.target === popup) {
+        popup.classList.add('hidden');
+    }
+};
+    </script>
+</body>
+</html>
