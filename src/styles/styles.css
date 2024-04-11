@@ -217,6 +217,17 @@
     padding: 10px;
 }
 
+.contatobtn1{
+    background-color: #ffffff;
+    align-items: center;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 10px;
+}
+
 
 
 
